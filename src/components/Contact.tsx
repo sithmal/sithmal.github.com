@@ -24,7 +24,7 @@ const links = [
   {
     icon: <Linkedin size={18} />,
     label: "LinkedIn",
-    value: "linkedin.com/in/sithmal",
+    value: "linkedin.com/in/sithmal-k-61281147/",
     href: personal.linkedin,
   },
   {
