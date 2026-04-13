@@ -1,9 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { writeFileSync } from 'fs';
 
-// https://vitejs.dev/config/
+function nojekyll() {
+  return {
+    name: 'nojekyll',
+    apply: 'build' as const,
+    closeBundle() {
+      writeFileSync('./dist/.nojekyll', '');
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), nojekyll()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
