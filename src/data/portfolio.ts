@@ -5,7 +5,7 @@ export const personal = {
   phone: "+358 451644495",
   email: "sithmal@gmail.com",
   website: "https://www.sithmal.info",
-  linkedin: "https://linkedin.com/in/sithmal",
+  linkedin: "https://www.linkedin.com/in/sithmal-k-61281147/",
   github: "https://github.com/sithmal",
   gitlab: "https://gitlab.com/sithmal",
   summary:
