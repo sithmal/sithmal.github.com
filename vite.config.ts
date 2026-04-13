@@ -2,19 +2,20 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { writeFileSync } from 'fs';
 
-function nojekyll() {
+function buildFiles() {
   return {
-    name: 'nojekyll',
+    name: 'build-files',
     apply: 'build' as const,
     closeBundle() {
       writeFileSync('./dist/.nojekyll', '');
+      writeFileSync('./dist/CNAME', 'sithmal.info');
     },
   };
 }
 
 export default defineConfig({
-  base: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/',
-  plugins: [react(), nojekyll()],
+  base: '/',
+  plugins: [react(), buildFiles()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
